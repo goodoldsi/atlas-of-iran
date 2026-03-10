@@ -1,0 +1,19 @@
+[
+  {
+    "id": "001",
+    "slug": "placeholder-1",
+    "full_name": "Placeholder Name",
+    "age": null,
+    "city": null,
+    "province": null,
+    "occupation": null,
+    "family_role": null,
+    "date_of_death": null,
+    "protest_wave": "2026",
+    "short_bio": "Memorial entry based on Morad Veisi's narrated record.",
+    "source_type": "youtube_transcript",
+    "source_title": "Morad Veisi memorial narration",
+    "source_url": "",
+    "verification_status": "source-reported"
+  }
+]
