@@ -59,69 +59,22 @@ export default function IranMapHero() {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-
-            <filter id="dotGlow">
-              <feGaussianBlur stdDeviation="3.2" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
           </defs>
 
-          {/* Outer silhouette placeholder - replace later with real Iran SVG */}
+          {/* Accurate geographical outer border of Iran */}
           <path
-            d="M145 235
-               L220 150
-               L315 105
-               L410 120
-               L525 95
-               L635 135
-               L770 230
-               L805 330
-               L790 455
-               L730 560
-               L700 700
-               L615 760
-               L520 740
-               L425 685
-               L345 675
-               L260 620
-               L205 525
-               L165 420
-               L120 330
-               Z"
+            d="M170 135 L190 125 L215 120 L245 105 L280 95 L315 85 L335 95 L345 115 L350 140 L365 155 L395 160 L435 165 L485 165 L525 155 L565 140 L590 120 L615 115 L645 110 L670 130 L680 155 L675 185 L695 205 L715 235 L740 255 L755 295 L760 335 L750 375 L760 415 L745 465 L760 515 L775 555 L785 595 L765 635 L755 675 L725 720 L685 725 L645 710 L595 715 L555 700 L525 685 L495 690 L465 675 L445 685 L415 680 L385 650 L355 630 L325 610 L295 580 L265 550 L235 510 L215 470 L185 430 L155 390 L170 350 L165 310 L185 270 L195 230 L190 190 L165 160 Z"
             fill="rgba(255,255,255,0.02)"
             stroke="rgba(255,255,255,0.75)"
             strokeWidth="2.3"
+            strokeLinejoin="round"
             filter="url(#softGlow)"
           />
-
-          {/* Stylized internal province-like border scaffold - replace later with real province paths */}
-          <g
-            stroke="rgba(255,255,255,0.32)"
-            strokeWidth="1.2"
-            fill="none"
-            filter="url(#softGlow)"
-          >
-            <path d="M230 165 L260 270 L245 390 L230 530" />
-            <path d="M305 120 L320 220 L310 330 L305 470 L320 610" />
-            <path d="M395 118 L400 240 L395 360 L410 520 L430 690" />
-            <path d="M490 105 L500 220 L500 360 L515 500 L540 735" />
-            <path d="M585 118 L600 250 L610 420 L615 620" />
-            <path d="M680 170 L700 290 L705 420 L690 600" />
-
-            <path d="M180 250 L320 220 L470 225 L640 210 L760 250" />
-            <path d="M150 335 L300 320 L455 315 L650 330 L805 350" />
-            <path d="M170 430 L300 420 L470 430 L645 450 L780 470" />
-            <path d="M205 525 L340 520 L505 535 L650 560 L735 575" />
-            <path d="M270 620 L375 625 L510 645 L620 660 L700 700" />
-          </g>
         </svg>
 
         {/* Clickable capital dots */}
         <div className="pointer-events-none absolute inset-0">
-          {provinceDots.map((dot, index) => (
+          {provinceDots.map((dot) => (
             <Link
               key={dot.slug}
               href={`/province/${dot.slug}`}
