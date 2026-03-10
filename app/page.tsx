@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center">
+      <section className="mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl flex-col items-center justify-center px-6 text-center">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-zinc-400">
           Memorial Archive
         </p>
@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
-            href="#memorial"
+            href="/memorial"
             className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
           >
             Explore Memorial
@@ -41,10 +41,12 @@ export default function Home() {
             <p className="text-3xl font-bold">2,000+</p>
             <p className="mt-2 text-sm text-zinc-400">Documented individuals</p>
           </div>
+
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
             <p className="text-3xl font-bold">Cities Across Iran</p>
             <p className="mt-2 text-sm text-zinc-400">Searchable by hometown</p>
           </div>
+
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
             <p className="text-3xl font-bold">Historical Memory</p>
             <p className="mt-2 text-sm text-zinc-400">Names, stories, sacrifice</p>
