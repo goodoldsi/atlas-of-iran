@@ -1,5 +1,5 @@
 import Link from "next/link";
-import IranMapReal from "@/components/IranMapReal";
+import IranMapClient from "@/components/IranMapClient";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[88vh] max-w-7xl items-center justify-center px-6 py-12 md:py-16">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-full max-w-[1120px]">
-              <IranMapReal />
+              <IranMapClient />
             </div>
           </div>
 
