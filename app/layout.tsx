@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Atlas of Iran",
   description:
     "A memorial archive documenting individuals killed during protests in Iran.",
@@ -8,12 +9,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className="bg-neutral-950 text-white">
+      <body className="bg-neutral-950 text-white antialiased">
         <header className="border-b border-zinc-800">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <a href="/" className="text-lg font-semibold tracking-wide">

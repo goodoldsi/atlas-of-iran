@@ -22,7 +22,7 @@ export default function MemorialPage() {
   const records = victims as Victim[];
 
   return (
-    <main className="min-h-screen bg-black px-6 py-16 text-white">
+    <div className="min-h-screen bg-black px-6 py-16 text-white">
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
           Memorial Archive
@@ -76,6 +76,6 @@ export default function MemorialPage() {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

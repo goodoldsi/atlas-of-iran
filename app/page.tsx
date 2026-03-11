@@ -1,16 +1,18 @@
 import Link from "next/link";
-import IranMapHero from "@/components/IranMapHero";
+import IranMapReal from "@/components/IranMapReal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white">
       <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.07),transparent_45%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.65))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.08),rgba(0,0,0,0.38)_35%,rgba(0,0,0,0.72))]" />
 
-        <div className="relative mx-auto flex min-h-[88vh] max-w-7xl items-center justify-center px-6 py-16">
+        <div className="relative mx-auto flex min-h-[88vh] max-w-7xl items-center justify-center px-6 py-12 md:py-16">
           <div className="absolute inset-0 flex items-center justify-center">
-            <IranMapHero />
+            <div className="w-full max-w-[1120px]">
+              <IranMapReal />
+            </div>
           </div>
 
           <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
@@ -52,19 +54,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 -mt-8 px-6 pb-8 md:-mt-10">
+      <section className="relative z-10 -mt-6 px-6 pb-8 md:-mt-8">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(255,255,255,0.04)]">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(255,255,255,0.04)] backdrop-blur-xl">
             <p className="text-3xl font-bold text-white">2,000+</p>
             <p className="mt-2 text-sm text-zinc-400">Documented individuals</p>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(255,255,255,0.04)]">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(255,255,255,0.04)] backdrop-blur-xl">
             <p className="text-3xl font-bold text-white">Cities Across Iran</p>
             <p className="mt-2 text-sm text-zinc-400">Searchable by hometown</p>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(255,255,255,0.04)]">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(255,255,255,0.04)] backdrop-blur-xl">
             <p className="text-3xl font-bold text-white">Historical Memory</p>
             <p className="mt-2 text-sm text-zinc-400">Names, stories, sacrifice</p>
           </div>
@@ -91,6 +93,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
