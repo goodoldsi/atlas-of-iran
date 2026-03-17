@@ -1,79 +1,65 @@
+import Link from "next/link";
+import MemorialSearch from "@/components/MemorialSearch";
+import type { Victim } from "@/types/victim";
 import victims from "../../data/victims.json";
-
-type Victim = {
-  id: string;
-  slug: string;
-  full_name: string;
-  age: number | null;
-  city: string | null;
-  province: string | null;
-  occupation: string | null;
-  family_role: string | null;
-  date_of_death: string | null;
-  protest_wave: string;
-  short_bio: string;
-  source_type: string;
-  source_title: string;
-  source_url: string;
-  verification_status: string;
-};
 
 export default function MemorialPage() {
   const records = victims as Victim[];
 
   return (
-    <div className="min-h-screen bg-black px-6 py-16 text-white">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-400">
-          Memorial Archive
-        </p>
+    <div id="top" className="min-h-screen bg-[#050505] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.03),transparent_24%)] pointer-events-none" />
 
-        <h1 className="mb-4 text-4xl font-bold md:text-6xl">Memorial</h1>
+      <div className="relative mx-auto max-w-6xl px-6 py-16">
+        <div className="mb-10">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-white"
+          >
+            <span>←</span>
+            <span>Back to map</span>
+          </Link>
+        </div>
 
-        <p className="mb-10 max-w-3xl text-zinc-400">
-          A growing archive of individuals killed during protests in Iran.
-          These entries are preserved so their names and stories remain part of
-          the historical memory of the nation.
-        </p>
+        <div className="mb-12 border-b border-white/8 pb-10">
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-zinc-500">
+            Memorial Archive
+          </p>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {records.map((person) => (
-            <article
-              key={person.id}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6"
-            >
-              <p className="mb-2 text-xs uppercase tracking-[0.2em] text-zinc-500">
-                {person.verification_status}
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1 className="text-5xl font-semibold tracking-tight text-white md:text-7xl">
+                Memorial
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-zinc-400 md:text-lg">
+                A growing archive of individuals killed during protests in Iran.
+                These entries are preserved so their names and stories remain
+                part of the historical memory of the nation.
               </p>
+            </div>
 
-              <h2 className="mb-3 text-2xl font-semibold">
-                {person.full_name}
-              </h2>
-
-              <div className="space-y-1 text-sm text-zinc-300">
-                <p>
-                  <span className="text-zinc-500">Age:</span>{" "}
-                  {person.age ?? "Unknown"}
-                </p>
-                <p>
-                  <span className="text-zinc-500">City:</span>{" "}
-                  {person.city ?? "Unknown"}
-                </p>
-                <p>
-                  <span className="text-zinc-500">Province:</span>{" "}
-                  {person.province ?? "Unknown"}
-                </p>
-                <p>
-                  <span className="text-zinc-500">Occupation:</span>{" "}
-                  {person.occupation ?? "Unknown"}
-                </p>
-              </div>
-
-              <p className="mt-4 text-sm leading-6 text-zinc-400">
-                {person.short_bio}
+            <div className="w-full max-w-xs rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_50px_rgba(255,255,255,0.03)] backdrop-blur-xl">
+              <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+                Total documented
               </p>
-            </article>
-          ))}
+              <p className="mt-3 text-5xl font-bold tracking-tight text-red-300 drop-shadow-[0_0_20px_rgba(252,165,165,0.18)]">
+                {records.length}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-zinc-400">
+                Search across the full archive.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <MemorialSearch records={records} />
+        <div className="mt-16 flex justify-center">
+          <a
+            href="#top"
+            className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white"
+          >
+            ↑ Back to top
+          </a>
         </div>
       </div>
     </div>

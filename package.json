@@ -6,13 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:victims": "node scripts/build-victims-json.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
     "@vnedyalk0v/react19-simple-maps": "^2.0.2",
+    "googleapis": "^171.4.0",
+    "iran-cities-json": "^2.0.0",
+    "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
